@@ -22,10 +22,11 @@
   overflow-y: auto;
 }
 
-.chat-input {
-  border-top: 0 none;
-  border-radius: 0 0 5px 5px;
+.chat-input-field {
+  flex: 1;
 }
+
+
 
 .chat-message-container {
   padding: 5px;

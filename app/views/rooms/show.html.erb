@@ -34,22 +34,26 @@
       <% end %>
     </div>
 
+    <div class="row">
+      <div class="col-12">  
+        <%= simple_form_for @room_message, remote: true do |form| %>
+          <div class="input-group mb-3">
+            <%= form.input :message, as: :string,
+                                     wrapper: false,
+                                     label: false,
+                                     input_html: {
+                                       class: 'chat-input chat-input-field'
+                                     } %>
 
-    <%= simple_form_for @room_message, remote: true do |form| %>
-      <div class="input-group mb-3">
-        <%= form.input :message, as: :string,
-                                 wrapper: false,
-                                 label: false,
-                                 input_html: {
-                                   class: 'chat-input'
-                                 } %>
-        <div class="input-group-append">
-          <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
-        </div>
-      </div>
+            <span class="input-group-btn">
+              <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
+            </span>
+          </div>
 
-      <%= form.input :room_id, as: :hidden %>
-    <% end %>
+          <%= form.input :room_id, as: :hidden %>
+        <% end %>
+      </div>  
+    </div>    
   </div>
 </div>
 
